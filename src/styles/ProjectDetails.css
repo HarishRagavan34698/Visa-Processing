@@ -1,0 +1,57 @@
+.project-details {
+  margin-bottom: 20px;
+  text-align: left;
+  width: 100%;
+}
+
+.project-label {
+  display: block;
+  margin-bottom: 16px;
+  font-weight: 600;
+  color: #343a40;
+  font-size: 1.1rem;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #e9ecef;
+  text-align: left;
+}
+
+.project-input-container {
+  margin-bottom: 8px;
+}
+
+.project-sub-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #495057;
+  font-size: 0.95rem;
+}
+
+.project-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  background-color: #f8f9fa;
+}
+
+.project-input:focus {
+  border-color: #007bff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  background-color: #fff;
+}
+
+.project-input::placeholder {
+  color: #6c757d;
+  opacity: 0.7;
+}
+
+/* Optional: If you want to style the required asterisk */
+.project-sub-label::after {
+  content: '*';
+  color: #dc3545;
+  margin-left: 4px;
+}

@@ -1,0 +1,89 @@
+/* Initiation Type Component Styles */
+.initiation-type {
+  margin-bottom: 20px;
+  text-align: left;
+  width: 100%;
+}
+
+.initiation-label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #343a40;
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+.initiation-options {
+  display: flex;
+  gap: 20px;
+}
+
+.initiation-option {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  padding-left: 24px;
+  transition: color 0.2s ease;
+}
+
+.initiation-option:hover {
+  color: #007bff;
+}
+
+.initiation-input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.initiation-custom-radio {
+  position: absolute;
+  top: 1px;
+  left: 0;
+  height: 16px;
+  width: 16px;
+  background-color: #fff;
+  border: 2px solid #ced4da;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.initiation-option:hover .initiation-custom-radio {
+  border-color: #007bff;
+}
+
+.initiation-input:checked ~ .initiation-custom-radio {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.initiation-input:checked ~ .initiation-custom-radio::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: white;
+}
+
+.initiation-text {
+  font-size: 0.95rem;
+  color: #495057;
+  font-weight: 500;
+}
+
+.initiation-input:checked ~ .initiation-text {
+  color: #007bff;
+}
+
+@media (max-width: 576px) {
+  .initiation-options {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

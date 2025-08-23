@@ -1,0 +1,230 @@
+/* PersonalInformation.css */
+
+fieldset {
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  margin-left: 0; /* Added this */
+  padding-left: 0; /* Changed from 16px to 0 */
+}
+
+.personal-info-container {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+legend {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  padding: 0 8px;
+  margin-left: 0; /* Changed from -8px to 0 */
+  position: relative;
+  left: 0; /* Changed from 27px to 0 */
+}
+
+/* Field Group Styling */
+.field-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  margin-left: 0; /* Added this */
+  padding-left: 0; /* Added this */
+}
+
+.field-group label {
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 6px;
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: left; /* Added this */
+  margin-left: 0; /* Added this */
+}
+
+.field-group label.required::after {
+  content: " *";
+  color: #e74c3c;
+  font-weight: 600;
+}
+
+.field-group input {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333;
+  background-color: #fff;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  margin-left: 0; /* Added this */
+  text-align: left; /* Added this */
+}
+
+.field-group input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.field-group input:hover:not(:focus) {
+  border-color: #bbb;
+}
+
+.field-group input::placeholder {
+  color: #999;
+  opacity: 1;
+  text-align: left; /* Added this */
+}
+
+/* Layout Classes */
+.inline {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 20px;
+  margin-left: 0; /* Changed from -8px to 0 */
+}
+
+.inline.two-cols {
+  grid-template-columns: 1fr 1fr;
+}
+
+.inline.three-cols {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* Date Input Styling */
+input[type="date"] {
+  position: relative;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  right: 8px;
+  color: #666;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-clear-button {
+  display: none;
+  -webkit-appearance: none;
+}
+
+/* Email Input Styling */
+input[type="email"] {
+  background-image: none;
+}
+
+input[type="email"]:invalid {
+  box-shadow: none;
+}
+
+input[type="email"]:focus:invalid {
+  border-color: #e74c3c;
+  box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.25);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  fieldset {
+    padding: 16px;
+  }
+  
+  .inline.two-cols,
+  .inline.three-cols {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  legend {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  fieldset {
+    padding: 12px;
+    margin-bottom: 16px;
+  }
+  
+  .field-group {
+    margin-bottom: 16px;
+  }
+  
+  .field-group input {
+    padding: 9px 10px;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  legend {
+    font-size: 15px;
+    padding: 0 8px;
+  }
+}
+
+/* Form Validation States */
+.field-group input.error {
+  border-color: #e74c3c;
+  background-color: #fdf2f2;
+}
+
+.field-group input.error:focus {
+  box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.25);
+}
+
+.field-group input.success {
+  border-color: #27ae60;
+  background-color: #f2f8f5;
+}
+
+.field-group input.success:focus {
+  box-shadow: 0 0 0 2px rgba(39, 174, 96, 0.25);
+}
+
+/* Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+  .field-group input,
+  fieldset {
+    transition: none;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  fieldset {
+    border: 2px solid #000;
+  }
+  
+  .field-group input {
+    border: 2px solid #333;
+  }
+  
+  .field-group input:focus {
+    border: 2px solid #0066cc;
+    box-shadow: 0 0 0 2px #0066cc;
+  }
+}
+
+/* Focus visible for better accessibility */
+.field-group input:focus-visible {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+/* NEW: Force left alignment for all elements */
+.personal-info-container {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  text-align: left !important;
+}
+
+.personal-info-container * {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  text-align: left !important;
+  justify-content: flex-start !important;
+}

@@ -1,0 +1,195 @@
+/* TravelInformation.css */
+
+/* Main Container */
+.travel-info {
+  padding: 24px;
+  border-radius: 16px;
+  margin-top: -12px;
+}
+
+.travel-info {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Header */
+.travel-info h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #374151;
+}
+
+/* Grid Layout for rows */
+.travel-fields-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+/* Two columns on medium screens and up */
+@media (min-width: 768px) {
+  .travel-fields-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Form Field Groups */
+.travel-field-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Labels */
+.travel-field-group label {
+  font-weight: 500;
+  margin-bottom: 4px;
+  color: #374151;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+/* Required Asterisk */
+.required-asterisk {
+  color: #ef4444;
+  margin-left: 2px;
+}
+
+/* Input and Select Styling */
+.travel-field-group input[type="text"],
+.travel-field-group input[type="date"],
+.travel-field-group select {
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #374151;
+  background-color: #ffffff;
+  transition: all 0.2s ease-in-out;
+  font-family: inherit;
+  width: 100%;
+}
+
+/* Hover States */
+.travel-field-group input[type="text"]:hover,
+.travel-field-group input[type="date"]:hover,
+.travel-field-group select:hover {
+  border-color: #9ca3af;
+}
+
+/* Focus States */
+.travel-field-group input[type="text"]:focus,
+.travel-field-group input[type="date"]:focus,
+.travel-field-group select:focus {
+  border-color: #3b82f6;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(147, 197, 253, 0.5);
+}
+
+/* Select Specific Styling */
+.travel-field-group select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 8px center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  padding-right: 36px;
+  cursor: pointer;
+}
+
+.travel-field-group select:focus {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%233b82f6' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+}
+
+/* Placeholder Styling */
+.travel-field-group input[type="text"]::placeholder {
+  color: #9ca3af;
+  opacity: 1;
+}
+
+/* Date Input Styling */
+.travel-field-group input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: invert(0.5);
+  padding: 2px;
+}
+
+.travel-field-group input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  filter: invert(0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .travel-info {
+    padding: 16px;
+  }
+  
+  .travel-fields-row {
+    gap: 16px;
+  }
+  
+  .travel-info h3 {
+    margin-bottom: 12px;
+  }
+}
+
+/* Enhanced Focus Accessibility */
+.travel-field-group input[type="text"]:focus-visible,
+.travel-field-group input[type="date"]:focus-visible,
+.travel-field-group select:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Form Validation States */
+.travel-field-group input.error,
+.travel-field-group select.error {
+  border-color: #ef4444;
+  background-color: #fef2f2;
+}
+
+.travel-field-group input.error:focus,
+.travel-field-group select.error:focus {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.3);
+}
+
+.travel-field-group input.success,
+.travel-field-group select.success {
+  border-color: #10b981;
+  background-color: #f0fdf4;
+}
+
+.travel-field-group input.success:focus,
+.travel-field-group select.success:focus {
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.3);
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .travel-field-group input[type="text"],
+  .travel-field-group input[type="date"],
+  .travel-field-group select {
+    border-width: 2px;
+    border-color: #000000;
+  }
+  
+  .travel-field-group input[type="text"]:focus,
+  .travel-field-group input[type="date"]:focus,
+  .travel-field-group select:focus {
+    border-color: #0066cc;
+    box-shadow: 0 0 0 3px #0066cc;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .travel-field-group input[type="text"],
+  .travel-field-group input[type="date"],
+  .travel-field-group select {
+    transition: none;
+  }
+}
+
+/* Ensure proper spacing for the Visa Entries field */

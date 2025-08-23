@@ -1,0 +1,373 @@
+/* VisaInformation.css */
+
+.visa-container {
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+.visa-header {
+  margin-bottom: 15px;         /* Reduced from 30px */
+}
+
+.visa-header h2 {
+  font-size: 18px;             /* Much smaller from 24px */
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.visa-form {
+  border-radius: 12px;
+}
+
+h2 {
+  text-align: left;
+  margin-left: -50px;
+}
+
+.form-section {
+  margin-bottom: 12px;         /* Much smaller from 20px */
+  margin-left: -50px;          /* Move much further left */
+}
+
+.form-section.two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;                   /* Much smaller gap */
+  align-items: start;
+  max-width: 400px;            /* Much smaller from 600px */
+}
+
+.form-section.two-column .form-section {
+  margin-bottom: 0;            /* Remove bottom margin for nested sections */
+  margin-left: 0;              /* Reset left margin for nested sections */
+}
+
+.form-section.two-column h3 {
+  margin-bottom: 15px;
+}
+
+.form-section h3 {
+  font-size: 12px;             /* Much smaller from 14px */
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;          /* Reduced from 10px */
+}
+
+/* Radio Button Styling */
+.radio-group {
+  display: flex;
+  gap: 15px;                   /* Much smaller from 20px */
+  flex-wrap: wrap;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 12px;             /* Much smaller from 14px */
+  color: #555;
+  position: relative;
+  padding-left: 0;
+}
+
+.radio-option input[type="radio"] {
+  display: none;
+}
+
+.radio-custom {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ddd;
+  border-radius: 50%;
+  margin-right: 12px;
+  position: relative;
+  transition: all 0.2s ease;
+  background: #fff;
+}
+
+.radio-option input[type="radio"]:checked + .radio-custom {
+  border-color: #2196f3;
+  background: #fff;
+}
+
+.radio-option input[type="radio"]:checked + .radio-custom::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;                  /* Reduced from 10px */
+  height: 8px;                 /* Reduced from 10px */
+  border-radius: 50%;
+  background: #2196f3;
+}
+
+.radio-option:hover .radio-custom {
+  border-color: #2196f3;
+}
+
+/* File Upload Styling */
+.file-upload {
+  border: 2px dashed #e0e0e0;
+  border-radius: 8px;
+  padding: 10px;               /* Much smaller from 15px */
+  text-align: center;
+  background: #fafafa;
+  transition: all 0.2s ease;
+  max-width: 300px;            /* Much smaller from 450px */
+}
+
+.file-upload:hover {
+  border-color: #2196f3;
+  background: #f8f9ff;
+}
+
+.file-instructions {
+  font-size: 12px;             /* Reduced from 14px */
+  color: #666;
+  margin-bottom: 15px;         /* Reduced from 20px */
+}
+
+.file-input-label {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.file-input {
+  display: none;
+}
+
+.file-input-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;                    /* Reduced from 10px */
+  padding: 8px 16px;           /* Reduced from 12px 24px */
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  color: #555;
+  font-size: 14px;             /* Reduced from 16px */
+  transition: all 0.2s ease;
+}
+
+.file-input-button:hover {
+  background: #e8e8e8;
+  border-color: #bbb;
+}
+
+.file-input-button i {
+  font-size: 18px;
+  color: #666;
+}
+
+/* File Preview Styling */
+.file-preview {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.file-info {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  gap: 15px;
+}
+
+.file-info i.fa-file-pdf {
+  font-size: 24px;
+  color: #ff4444;
+  background: #fff2f2;
+  padding: 8px;
+  border-radius: 4px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.file-details {
+  flex: 1;
+  text-align: left;
+}
+
+.file-name {
+  display: block;
+  font-weight: 600;
+  color: #333;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.file-size {
+  display: block;
+  font-size: 14px;
+  color: #666;
+}
+
+.remove-file {
+  background: none;
+  border: none;
+  color: #ff4444;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.remove-file:hover {
+  background: #fff2f2;
+  color: #ff0000;
+}
+
+/* Form Actions */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.submit-button {
+  background: #2196f3;
+  color: white;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.submit-button:hover {
+  background: #1976d2;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(33, 150, 243, 0.3);
+}
+
+.submit-button:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .visa-container {
+    padding: 15px;
+  }
+  
+  .visa-form {
+    padding: 20px;
+  }
+  
+  .form-section.two-column {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .form-section.two-column .form-section {
+    margin-bottom: 20px;       /* Add some margin back on mobile */
+  }
+  
+  .radio-group {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .form-section {
+    margin-bottom: 30px;
+  }
+  
+  .file-upload {
+    padding: 20px;
+  }
+  
+  .file-info {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  
+  .file-details {
+    text-align: center;
+  }
+  
+  .form-actions {
+    justify-content: center;
+  }
+  
+  .submit-button {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .visa-header h2 {
+    font-size: 20px;
+  }
+  
+  .form-section h3 {
+    font-size: 16px;
+  }
+  
+  .radio-option {
+    font-size: 15px;
+  }
+  
+  .file-input-button {
+    font-size: 15px;
+    padding: 10px 20px;
+  }
+}
+
+/* Focus States for Accessibility */
+.radio-option:focus-within .radio-custom {
+  outline: 2px solid #2196f3;
+  outline-offset: 2px;
+}
+
+.file-input-label:focus-within .file-input-button {
+  outline: 2px solid #2196f3;
+  outline-offset: 2px;
+}
+
+.submit-button:focus {
+  outline: 2px solid #2196f3;
+  outline-offset: 2px;
+}
+
+.remove-file:focus {
+  outline: 2px solid #ff4444;
+  outline-offset: 2px;
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .radio-custom {
+    border-width: 3px;
+  }
+  
+  .file-upload {
+    border-width: 3px;
+  }
+  
+  .submit-button {
+    border: 2px solid #000;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
