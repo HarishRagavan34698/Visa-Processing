@@ -3,44 +3,45 @@
 .visa-container {
   padding: 20px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  color: #213547;
 }
 
 .visa-header {
-  margin-bottom: 15px;         /* Reduced from 30px */
+  margin-bottom: 15px;
+  text-align: left;
 }
 
 .visa-header h2 {
-  font-size: 18px;             /* Much smaller from 24px */
+  font-size: 18px;
   font-weight: 600;
   color: #333;
   margin: 0;
+  padding: 0;
 }
 
 .visa-form {
   border-radius: 12px;
 }
 
-h2 {
-  text-align: left;
-  margin-left: -50px;
-}
-
+/* Remove negative margins and fix alignment */
 .form-section {
-  margin-bottom: 12px;         /* Much smaller from 20px */
-  margin-left: -50px;          /* Move much further left */
+  margin-bottom: 12px;
+  margin-left: 0;
+  padding: 0;
 }
 
 .form-section.two-column {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 15px;                   /* Much smaller gap */
+  gap: 15px;
   align-items: start;
-  max-width: 400px;            /* Much smaller from 600px */
+  max-width: 100%;
+  margin-left: 0;
 }
 
 .form-section.two-column .form-section {
-  margin-bottom: 0;            /* Remove bottom margin for nested sections */
-  margin-left: 0;              /* Reset left margin for nested sections */
+  margin-bottom: 0;
+  margin-left: 0;
 }
 
 .form-section.two-column h3 {
@@ -48,16 +49,17 @@ h2 {
 }
 
 .form-section h3 {
-  font-size: 12px;             /* Much smaller from 14px */
+  font-size: 12px;
   font-weight: 600;
   color: #333;
-  margin-bottom: 8px;          /* Reduced from 10px */
+  margin-bottom: 8px;
+  text-align: left;
 }
 
 /* Radio Button Styling */
 .radio-group {
   display: flex;
-  gap: 15px;                   /* Much smaller from 20px */
+  gap: 15px;
   flex-wrap: wrap;
 }
 
@@ -65,7 +67,7 @@ h2 {
   display: flex;
   align-items: center;
   cursor: pointer;
-  font-size: 12px;             /* Much smaller from 14px */
+  font-size: 12px;
   color: #555;
   position: relative;
   padding-left: 0;
@@ -97,8 +99,8 @@ h2 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 8px;                  /* Reduced from 10px */
-  height: 8px;                 /* Reduced from 10px */
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background: #2196f3;
 }
@@ -109,13 +111,11 @@ h2 {
 
 /* File Upload Styling */
 .file-upload {
-  border: 2px dashed #e0e0e0;
+
   border-radius: 8px;
-  padding: 10px;               /* Much smaller from 15px */
-  text-align: center;
-  background: #fafafa;
+  padding: 10px;
   transition: all 0.2s ease;
-  max-width: 300px;            /* Much smaller from 450px */
+  max-width: 100%;
 }
 
 .file-upload:hover {
@@ -124,71 +124,108 @@ h2 {
 }
 
 .file-instructions {
-  font-size: 12px;             /* Reduced from 14px */
+  font-size: 12px;
   color: #666;
-  margin-bottom: 15px;         /* Reduced from 20px */
+  margin-bottom: 15px;
+  text-align: left;
 }
 
-.file-input-label {
-  display: inline-block;
-  cursor: pointer;
+.file-input-container {
+  position: relative;
+  margin-bottom: 8px;
 }
 
-.file-input {
-  display: none;
+.file-input-hidden {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
-.file-input-button {
+.file-input-display {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;                    /* Reduced from 10px */
-  padding: 8px 16px;           /* Reduced from 12px 24px */
-  background: #f5f5f5;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  color: #555;
-  font-size: 14px;             /* Reduced from 16px */
-  transition: all 0.2s ease;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  padding: 8px 12px;
+  height: 40px;
 }
 
-.file-input-button:hover {
-  background: #e8e8e8;
-  border-color: #bbb;
+.file-input-text {
+  flex: 1;
+  font-size: 14px;
+  color: #999;
+  text-align: left;
+  padding-right: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.file-input-button i {
-  font-size: 18px;
+.file-input-spacer {
+  flex: 1;
+}
+
+.attach-button {
+  background: #1890ff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background 0.3s ease;
+}
+
+.attach-button:hover {
+  background: #40a9ff;
+}
+
+.file-format {
+  font-size: 12px;
   color: #666;
+  font-weight: 500;
+  min-width: 40px;
+  text-align: center;
 }
 
 /* File Preview Styling */
 .file-preview {
   background: #fff;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  padding: 0;
-  margin-top: 20px;
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+  padding: 12px;
+  margin-top: 12px;
+}
+
+.file-preview-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .file-info {
   display: flex;
   align-items: center;
-  padding: 16px 20px;
-  gap: 15px;
+  flex: 1;
 }
 
-.file-info i.fa-file-pdf {
-  font-size: 24px;
-  color: #ff4444;
-  background: #fff2f2;
-  padding: 8px;
-  border-radius: 4px;
-  width: 40px;
-  height: 40px;
+.file-icon {
+  margin-right: 12px;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: #fff2f0;
+  border-radius: 4px;
+}
+
+.file-icon svg {
+  width: 20px;
+  height: 20px;
 }
 
 .file-details {
@@ -198,32 +235,41 @@ h2 {
 
 .file-name {
   display: block;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 500;
   color: #333;
-  font-size: 16px;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.file-size {
+.file-meta {
   display: block;
-  font-size: 14px;
+  font-size: 12px;
   color: #666;
 }
 
-.remove-file {
+.remove-button {
   background: none;
   border: none;
-  color: #ff4444;
-  font-size: 16px;
+  color: #ff4d4f;
   cursor: pointer;
-  padding: 8px;
+  padding: 4px;
   border-radius: 4px;
-  transition: all 0.2s ease;
+  transition: background 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.remove-file:hover {
-  background: #fff2f2;
-  color: #ff0000;
+.remove-button:hover {
+  background: #fff2f0;
+}
+
+.remove-button svg {
+  width: 16px;
+  height: 16px;
 }
 
 /* Form Actions */
@@ -257,46 +303,71 @@ h2 {
   transform: translateY(0);
 }
 
+/* Focus states for accessibility */
+.radio-option:focus-within .radio-custom {
+  outline: 2px solid #2196f3;
+  outline-offset: 2px;
+}
+
+.attach-button:focus {
+  outline: 2px solid #1890ff;
+  outline-offset: 2px;
+}
+
+.remove-button:focus {
+  outline: 2px solid #ff4d4f;
+  outline-offset: 2px;
+}
+
+.submit-button:focus {
+  outline: 2px solid #2196f3;
+  outline-offset: 2px;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .visa-container {
     padding: 15px;
   }
   
-  .visa-form {
-    padding: 20px;
-  }
-  
   .form-section.two-column {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 20px;
   }
   
   .form-section.two-column .form-section {
-    margin-bottom: 20px;       /* Add some margin back on mobile */
+    margin-bottom: 20px;
   }
   
   .radio-group {
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
   }
   
-  .form-section {
-    margin-bottom: 30px;
-  }
-  
-  .file-upload {
-    padding: 20px;
-  }
-  
-  .file-info {
+  .file-input-display {
     flex-direction: column;
-    text-align: center;
+    height: auto;
+    padding: 12px;
     gap: 10px;
   }
   
-  .file-details {
+  .file-input-text {
     text-align: center;
+    padding-right: 0;
+  }
+  
+  .file-input-spacer {
+    display: none;
+  }
+  
+  .file-preview-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .remove-button {
+    align-self: flex-end;
   }
   
   .form-actions {
@@ -311,42 +382,21 @@ h2 {
 
 @media (max-width: 480px) {
   .visa-header h2 {
-    font-size: 20px;
-  }
-  
-  .form-section h3 {
     font-size: 16px;
   }
   
-  .radio-option {
-    font-size: 15px;
+  .form-section h3 {
+    font-size: 14px;
   }
   
-  .file-input-button {
-    font-size: 15px;
-    padding: 10px 20px;
+  .radio-option {
+    font-size: 14px;
   }
-}
-
-/* Focus States for Accessibility */
-.radio-option:focus-within .radio-custom {
-  outline: 2px solid #2196f3;
-  outline-offset: 2px;
-}
-
-.file-input-label:focus-within .file-input-button {
-  outline: 2px solid #2196f3;
-  outline-offset: 2px;
-}
-
-.submit-button:focus {
-  outline: 2px solid #2196f3;
-  outline-offset: 2px;
-}
-
-.remove-file:focus {
-  outline: 2px solid #ff4444;
-  outline-offset: 2px;
+  
+  .attach-button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
 }
 
 /* High Contrast Mode */
@@ -370,4 +420,58 @@ h2 {
     transition: none !important;
     animation: none !important;
   }
+}
+
+/* Action Buttons Styling */
+.action-buttons {
+  margin-top: 20px;
+}
+
+.button-container {
+  position: relative;
+  width: 100%;
+}
+
+.button-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 20px;
+  gap: 12px;
+}
+
+.action-button {
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 1;
+}
+
+.cancel-button {
+  background: #fff;
+  color: #666;
+  border: 1px solid #d9d9d9;
+}
+
+.cancel-button:hover {
+  border-color: #40a9ff;
+  color: #40a9ff;
+}
+
+.submit-button {
+  background: #1890ff;
+  color: white;
+  border: none;
+}
+
+.submit-button:hover {
+  background: #40a9ff;
 }
